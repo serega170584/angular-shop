@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Личный кабинет</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input type="text" placeholder="Логин" aria-label="Логин" matInput [formControl]="loginControl">
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" placeholder="Пароль" aria-label="Пароль" matInput [formControl]="passwordControl">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="loginControl.value" cdkFocusInitial>Войти</button>
+    <a href="#" mat-button>Регистрация</a>
+</div>

@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Заказать звонок</h1>
+<div mat-dialog-content>
+    <p>
+        <mat-form-field>
+            <input type="text" placeholder="Ваше имя" aria-label="Ваше имя" matInput [formControl]="name" required>
+            <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="text" placeholder="Телефон" aria-label="Телефон" matInput [formControl]="telephone" required>
+            <mat-error *ngIf="telephone.invalid">{{getTelephoneErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-slide-toggle [formControl]="agree">Я согласен на обработку персональных данных</mat-slide-toggle>
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="name.value" [disabled]="hasErrors()" cdkFocusInitial>Отправить</button>
+</div>

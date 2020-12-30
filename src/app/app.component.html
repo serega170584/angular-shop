@@ -1,0 +1,31 @@
+<mat-grid-list *ngIf="isShow" cols="7" rowHeight="82px">
+    <mat-grid-tile><img src="/assets/images/logo.svg" width="26" /></mat-grid-tile>
+    <mat-grid-tile>Интернет-магазин представительского класса</mat-grid-tile>
+    <mat-grid-tile>
+        <app-region-select></app-region-select>
+    </mat-grid-tile>
+    <mat-grid-tile><button mat-button [matMenuTriggerFor]="menu">+0 000 000 00 00</button>
+        <mat-menu #menu="matMenu">
+            <a rel="nofollow" href="tel:+00000000000" mat-menu-item>+0 000 000 00 00</a>
+            <a rel="nofollow" href="tel:+00000000001" mat-menu-item>+0 000 000 00 01</a>
+        </mat-menu>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-order-call></app-order-call>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-search></app-search>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-signin></app-signin>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list *ngIf="isShowPortrait" cols="1" rowHeight="82px">
+    <mat-grid-tile>
+        <div mat-dialog-content style="width: 90%;">
+            <mat-form-field style="width:100%">
+                <input type="text" placeholder="Поиск" aria-label="Поиск" matInput>
+            </mat-form-field>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
